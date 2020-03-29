@@ -36,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
                                         int groupPosition, int childPosition, long id) {
                 String region = expandableListTitle.get(groupPosition);
                 String fileName = expandableListTitle.get(groupPosition)+"-"+expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
+                String country = expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
                 Intent intent = new Intent(MainActivity.this,ShowFlagActivity.class);
                 intent.putExtra("EXTRA_REGION",region);
                 intent.putExtra("EXTRA_FILENAME",fileName);
+                intent.putExtra("EXTRA_COUNTRY",country);
                 startActivity(intent);
                 return false;
             }
