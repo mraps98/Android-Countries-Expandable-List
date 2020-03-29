@@ -2,6 +2,7 @@ package com.example.countries;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
@@ -33,14 +34,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
-                                + "-"
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
+                String region = expandableListTitle.get(groupPosition);
+                String fileName = expandableListTitle.get(groupPosition)+"-"+expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
+                Intent intent = new Intent(MainActivity.this,ShowFlagActivity.class);
+                intent.putExtra("EXTRA_REGION",region);
+                intent.putExtra("EXTRA_FILENAME",fileName);
+                startActivity(intent);
                 return false;
             }
         });

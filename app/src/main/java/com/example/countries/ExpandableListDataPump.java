@@ -248,9 +248,9 @@ public class ExpandableListDataPump {
         expandableListDetail.put("Africa",africa);
         expandableListDetail.put("Asia",asia);
         expandableListDetail.put("Europe",europe);
-        expandableListDetail.put("North America",na);
+        expandableListDetail.put("North_America",na);
         expandableListDetail.put("Oceania",oceania);
-        expandableListDetail.put("South America",sa);
+        expandableListDetail.put("South_America",sa);
 
         return expandableListDetail;
     }
